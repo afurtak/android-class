@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/childInputFragment"
+        android:name="com.furtak.androidclasses.fragments.ChildInputFormFragment"
+        android:label="ChildInputFragment" />
+    <fragment
+        android:id="@+id/childrenListFragment"
+        android:name="com.furtak.androidclasses.fragments.ChildrenListFragment"
+        android:label="ChildrenListFragment" >
+        <action
+            android:id="@+id/action_childrenListFragment_to_childInputFragment"
+            app:destination="@id/childInputFragment" />
+        <action
+            android:id="@+id/action_childrenListFragment_to_childDetailFragment"
+            app:destination="@id/childDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.furtak.androidclasses.fragments.MainMenuFragment"
+        android:label="MainMenuFragment" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_childrenListFragment"
+            app:destination="@id/childrenListFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_childInputFragment"
+            app:destination="@id/childInputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/childDetailFragment"
+        android:name="com.furtak.androidclasses.fragments.ChildDetailFragment"
+        android:label="ChildDetailFragment" />
+</navigation>
